@@ -3,7 +3,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './chat.module.css';
 import { fetchMessages, postMessage } from './chat.action';
 import { SendRegular } from '@fluentui/react-icons';
-import { Button, Textarea, Spinner } from '@fluentui/react-components';
+import { Button, Spinner } from '@fluentui/react-components';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function ChatComponent({ chatId, user }) {
   const [messages, setMessages] = useState([]);
@@ -64,7 +66,9 @@ export default function ChatComponent({ chatId, user }) {
       <div className={styles.messages}>
         {messages.map((m, idx) => (
           <div key={idx} className={`${styles.messageWrapper} ${m.role === 'assistant' ? styles.assistant : styles.user}`}>
-            <div className={styles.messageContent}>{m.content}</div>
+            <div className={styles.messageContent}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content ?? ''}</ReactMarkdown>
+            </div>
           </div>
         ))}
         <div ref={endRef} />
@@ -72,13 +76,13 @@ export default function ChatComponent({ chatId, user }) {
 
       <div className={styles.composerWrapper}>
         <div className={styles.composer}>
-          <Textarea
-            className={styles.fluentInput}
+          <textarea
+            className={styles.nativeTextarea}
             value={input}
-            onChange={(e, data) => setInput(data.value)}
+            onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Pergunte sobre os dados dos sensores ou relatórios das plantações..."
-            resize="vertical"
+            rows={2}
           />
           <Button 
             className={styles.fluentSendButton} 

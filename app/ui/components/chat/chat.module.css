@@ -55,6 +55,41 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
+/* Markdown formatting inside messages */
+.messageContent p {
+  margin: 0 0 0.5rem;
+}
+.messageContent ul,
+.messageContent ol {
+  margin: 0.5rem 0;
+  padding-left: 1.25rem;
+}
+.messageContent strong {
+  font-weight: 600;
+}
+.messageContent em {
+  font-style: italic;
+}
+.messageContent code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace;
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.messageContent pre {
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  overflow: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Segoe UI Mono', monospace;
+  margin: 0.5rem 0;
+}
+.messageContent a {
+  color: var(--ifsp-green, #32A041);
+  text-decoration: underline;
+}
+
 .composerWrapper {
   width: 100%;
   max-width: 800px;
@@ -67,7 +102,7 @@
   display: flex;
   gap: 12px;
   width: 100%;
-  align-items: flex-end;
+  align-items: center;
   pointer-events: auto;
 }
 
@@ -76,11 +111,29 @@
   width: 100%;
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  min-width: 0;
 }
 
 .fluentInput textarea {
-  max-height: 150px;
+  max-height: 300px;
+  min-height: 44px;
   font-size: 1rem;
+  padding: 8px 12px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  box-sizing: border-box;
+}
+
+/* Ensure textarea inside Fluent UI grows and centers properly */
+.fluentInput textarea,
+.fluentInput :global(textarea) {
+  min-width: 0;
+  width: 100% !important;
+  min-height: 44px !important;
+  height: auto !important;
+  padding: 8px 12px !important;
 }
 
 .fluentSendButton {
@@ -91,8 +144,29 @@
   min-width: 44px !important;
   border-radius: 50% !important;
   flex-shrink: 0;
-  margin-bottom: 2px;
+  margin-bottom: 0;
+  align-self: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.nativeTextarea {
+  flex: 1;
+  width: 100%;
+  min-height: 44px;
+  max-height: 300px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  line-height: 1.4;
+  resize: vertical;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.nativeTextarea:focus {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
 
 .fluentSendButton:hover:not(:disabled) {
