@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cores oficiais do IFSP */
+  --ifsp-green: #32A041;
+  --ifsp-green-hover: #288034;
+  --ifsp-red: #C8191E;
+  --ifsp-dark: #333333;
+  --ifsp-light: #F9FAFB;
+  
+  --foreground-rgb: 51, 51, 51;
+  --background-rgb: 249, 250, 251;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-color: var(--ifsp-light);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

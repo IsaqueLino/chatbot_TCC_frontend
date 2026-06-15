@@ -1,0 +1,364 @@
+.asideContainer {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  z-index: 1;
+  background-color: #202123;
+  color: #ececec;
+  --sidebar-closed-width: 72px;
+}
+
+.sidebarOpen {
+  width: 18rem;
+}
+
+.sidebarClosed {
+  width: var(--sidebar-closed-width);
+}
+
+/* Menu (Nova conversa / Pesquisar) */
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 12px;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  color: #ececec;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menuItem:hover {
+  background: #2A2B32;
+}
+
+.menuIcon {
+  display: inline-flex;
+  width: 28px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuText {
+  font-size: 0.95rem;
+  color: #ececec;
+}
+
+/* ÁREA DA LOGO NO TOPO */
+.sidebarLogoContainer {
+  padding: 24px 16px 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebarLogo {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+.sidebarLogoContainerClosed {
+  padding: 24px 0 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo wrapper when sidebar is open: keeps logo position consistent with closed state */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding-left: 8px;
+}
+
+.logoLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoRight {
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+}
+
+.logoText {
+  font-weight: 600;
+  color: #ececec;
+  font-size: 1.05rem;
+}
+
+.closedLogoHoverIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #ececec;
+}
+
+.sidebarLogoClosed {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+.sideContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chatList {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.chatItemButton {
+  color: #ececec !important;
+  border-radius: 8px !important;
+  padding: 14px 16px !important;
+  min-height: 52px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  margin-bottom: 6px !important;
+}
+
+.chatItemButton:hover {
+  background-color: #2A2B32 !important;
+}
+
+.chatItemSelected {
+  background-color: var(--ifsp-green, #32A041) !important;
+  color: white !important;
+}
+
+.chatItemContent {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.chatTitle {
+  flex: 1;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.chatItemIcons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.editInput {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #444;
+  background-color: #2A2B32;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.iconButtonDelete,
+.iconButtonEdit {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  color: #ececec;
+}
+
+.iconButtonDelete:hover {
+  color: var(--ifsp-red, #C8191E);
+}
+
+.iconButtonEdit:hover {
+  color: white;
+}
+
+.chatNumber {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ececec;
+}
+
+.chatIconItemSelected .chatNumber {
+  color: white;
+}
+
+.mobileToggleButton {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 60;
+  background-color: #202123;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.profileSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 12px;
+  border-top: 1px solid #333;
+  gap: 8px;
+}
+
+.profileSection, .profileSectionClosed {
+  position: relative;
+}
+
+.profileSectionClosed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px;
+  gap: 6px;
+  border-top: 1px solid #333;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--ifsp-green, #32A041);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.userName {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ececec;
+  text-align: left;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logoutButton {
+  color: #9ca3af !important;
+  margin-top: 4px;
+}
+
+.logoutButton:hover {
+  color: var(--ifsp-red, #C8191E) !important;
+}
+
+.gearButton {
+  color: #ececec !important;
+}
+
+.settingsPanel {
+  position: absolute;
+  bottom: 64px;
+  right: 16px;
+  background: #171717;
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  z-index: 70;
+  min-width: 160px;
+}
+
+.profileLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileMain {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileActions {
+  margin-top: 6px;
+  display: flex;
+  gap: 8px;
+}
+
+.recentHeader {
+  color: #9aa0a6;
+  font-size: 0.85rem;
+  padding: 8px 16px 0 16px;
+}
+
+.settingsItem {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  text-align: left;
+  color: #ececec;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.settingsItem:hover {
+  background: #2A2B32;
+}
+
+.topControlIcon {
+  color: #ececec !important;
+}
+
+@media (max-width: 768px) {
+  .asideContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 50;
+  }
+  .sidebarOpen {
+    width: 80%;
+  }
+  .sidebarClosed {
+    width: 0;
+  }
+}

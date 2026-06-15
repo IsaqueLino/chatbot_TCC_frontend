@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
+  align-items: center;
+}
+
+.messages {
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+  overflow-y: auto;
+  padding: 40px 24px 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.messageWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  align-items: flex-end;
+  margin-bottom: 32px;
+}
+
+.user .messageContent {
+  background: var(--ifsp-green, #32A041);
+  color: white;
+  border-radius: 20px 20px 4px 20px;
+}
+
+.assistant {
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.assistant .messageContent {
+  background: #f4f4f5;
+  color: #111827;
+  border-radius: 20px 20px 20px 4px;
+  border: 1px solid #e5e7eb;
+}
+
+.messageContent {
+  max-width: 85%;
+  padding: 14px 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.composerWrapper {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 24px 32px 24px;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.composer {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  align-items: flex-end;
+  pointer-events: auto;
+}
+
+.fluentInput {
+  flex: 1;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.fluentInput textarea {
+  max-height: 150px;
+  font-size: 1rem;
+}
+
+.fluentSendButton {
+  background-color: var(--ifsp-green, #32A041) !important;
+  color: white !important;
+  width: 44px;
+  height: 44px;
+  min-width: 44px !important;
+  border-radius: 50% !important;
+  flex-shrink: 0;
+  margin-bottom: 2px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.fluentSendButton:hover:not(:disabled) {
+  background-color: var(--ifsp-green-hover, #288034) !important;
+}
+
+.fluentSendButton:disabled {
+  background-color: #d1d5db !important;
+  color: #9ca3af !important;
+}
+
+.sendIcon {
+  font-size: 1.2rem;
+}
+
+/* TELA VAZIA E MARCA D'ÁGUA */
+.emptyContainer {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyLogo {
+  width: 300px;
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.12; /* Opacidade suave para não atrapalhar a visão (efeito marca d'água) */
+  pointer-events: none;
+  user-select: none;
+}
