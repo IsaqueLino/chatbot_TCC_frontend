@@ -148,7 +148,7 @@ export default function Dashboard() {
       )}
 
       <div className={styles.chartsGrid}>
-        <div className={styles.chartCard}>
+        <div className={`${styles.chartCard} ${styles.chartLarge}`}>
           <h3 className={styles.chartTitle}>Temperatura e Umidade do Ar</h3>
           <ResponsiveContainer width="100%" height={220}>
             <AreaChart data={deviceData}>
@@ -173,7 +173,7 @@ export default function Dashboard() {
           </ResponsiveContainer>
         </div>
 
-        <div className={styles.chartCard}>
+        <div className={`${styles.chartCard} ${styles.chartLarge}`}>
           <h3 className={styles.chartTitle}>Umidade do Solo e pH</h3>
           <ResponsiveContainer width="100%" height={220}>
             <LineChart data={deviceData}>
@@ -190,7 +190,7 @@ export default function Dashboard() {
       </div>
 
       {radarTraces.length > 0 && (
-        <div className={styles.chartCard}>
+        <div className={`${styles.chartCard} ${styles.chartWide}`}>
           <h3 className={styles.chartTitle}>Comparação de Métricas por Dispositivo (normalizado 0–100%)</h3>
           <Plot
             data={radarTraces}
